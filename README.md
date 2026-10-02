@@ -1,65 +1,68 @@
 # Vidnelo 1.0
 
-Uruchom **Vidnelo.exe**. Obsługa programu jest opisana w `INSTRUKCJA.txt`.
+A Windows desktop app for downloading video and audio, powered by [yt-dlp](https://github.com/yt-dlp/yt-dlp).
 
-## Zawartość
+## Getting started
 
-- `Vidnelo.exe` — gotowa aplikacja.
-- `tools/` — wymagane yt-dlp, FFmpeg, FFprobe i Deno oraz informacje o ich źródłach i licencji.
-- `assets/` — ikony, oryginalne logo i opisy grafik. Skrót pulpitu korzysta z tego folderu.
-- `src/` — aktualny kod aplikacji, interfejs WPF i 15 tłumaczeń.
-- `tests/` — testy oraz niewielkie lokalne pliki multimedialne do ich uruchamiania.
-- `scripts/` — pobieranie narzędzi, przygotowanie ikony i skrótu pulpitu.
-- `docs/` — zachowany raport weryfikacji interfejsu.
+Run **Vidnelo.exe**, paste a link, choose a format and quality, select a destination folder, and start downloading. Keep the `tools/` folder alongside the executable.
 
-## Kompilacja
+The interface supports 15 languages, including English and Polish. Additional instructions in Polish are available in `INSTRUKCJA.txt`.
 
-W PowerShell uruchom `./build.ps1`. Wymagany jest kompilator .NET Framework w Windows.
-Program wynikowy pozostaje obok `tools/`. Jeśli Vidnelo jest otwarte, zamknij je
-przed zastąpieniem pliku EXE albo użyj `./build.ps1 -OutputName Vidnelo.dev.exe`.
-Pliki pośrednie kompilatora powstają w `.build/` i można je usunąć po kompilacji.
+## Project layout
 
-## Weryfikacja
+- `Vidnelo.exe` — the compiled application; distributed separately from the source code.
+- `tools/` — yt-dlp, FFmpeg, FFprobe, and Deno, with source and license information.
+- `assets/` — icons, original logo artwork, and artwork descriptions. The desktop shortcut uses an icon from this folder.
+- `src/` — application code, WPF interface, and translations.
+- `tests/` — checks and small local media fixtures.
+- `scripts/` — tools for dependency setup, icon preparation, and desktop shortcut creation.
+- `docs/` — interface verification report.
 
-- `python tests/check-translations.py` sprawdza kompletność katalogu języków.
-- `Vidnelo.exe --render-preview test-artifacts/ui` sprawdza interfejs i zapisuje podglądy.
-- `Vidnelo.exe --localization-preview test-artifacts/languages` sprawdza wersje językowe.
-- `python tests/test-server.py` udostępnia lokalne pliki testowe pod `127.0.0.1:18769`.
-  Z uruchomionym serwerem: `Vidnelo.exe --ui-test test-artifacts/flow`.
+## Building
 
-Testy C# w `tests/` kompiluje się razem z `src/DownloadEngine.cs` (lub
-`src/ProgressModel.cs` dla ProgressModelChecks) kompilatorem `csc.exe` z .NET Framework.
-Wynikowe EXE należy umieścić w głównym folderze aplikacji, aby znalazły `tools/`.
-Testy używają lokalnych plików i katalogu `test-artifacts/`.
+Run `./build.ps1` in PowerShell. Building requires Windows and the .NET Framework compiler.
 
-`.build/`, `.downloads/`, `test-artifacts/` i robocze pliki EXE można usuwać po testach.
-Ustawienia użytkownika są przechowywane oddzielnie w `%LOCALAPPDATA%/LinkDownloader`.
+The resulting executable is placed alongside `tools/`. Close Vidnelo before replacing its executable, or build a separate copy with:
 
-## Aktualizacje przez GitHub
+```powershell
+./build.ps1 -OutputName Vidnelo.dev.exe
+```
 
-Repozytorium wydań: https://github.com/cavxvac/Vidnelo/releases
+Intermediate build files are stored in `.build/` and can be removed after compilation.
 
-Vidnelo sprawdza najnowsze stabilne wydanie w tle przy uruchomieniu. Nową wersję
-sygnalizuje wyróżnieniem przycisku aktualizacji, bez przerywania pobierania.
-Okno „Aktualizacje” pokazuje opis wydania i pozwala otworzyć jego stronę na
-GitHubie, odłożyć aktualizację lub zapamiętać pominięcie danej wersji.
-Ręczne sprawdzanie pokazuje także pominięte wersje. Brak połączenia podczas
-startu nie wyświetla błędu; sprawdzanie ręczne informuje o problemie.
+## Verification
 
-Ten wariant nie instaluje ani nie podmienia EXE automatycznie. Po pobraniu nowej
-wersji należy zamknąć Vidnelo i zastąpić plik aplikacji. Ustawienia pozostają
-w `%LOCALAPPDATA%/LinkDownloader`. Osobny przycisk „Aktualizuj yt-dlp” uruchamia
-aktualizację silnika pobierania.
+- `python tests/check-translations.py` checks the translation catalog.
+- `Vidnelo.exe --render-preview test-artifacts/ui` checks the interface and saves previews.
+- `Vidnelo.exe --localization-preview test-artifacts/languages` checks localized layouts.
+- `python tests/test-server.py` serves local test media at `127.0.0.1:18769`. With the server running, use `Vidnelo.exe --ui-test test-artifacts/flow` to check the download flow.
 
-Wydania publikujemy z tagami `v1.0`, `v1.1`, `v1.2.1` itd. Numer w
-`src/AssemblyInfo.cs` musi odpowiadać tagowi. Należy dołączyć skompilowaną
-aplikację lub pakiet dystrybucyjny do GitHub Release — automatyczne archiwum
-„Source code” nie jest gotową aplikacją. Wersje robocze i prerelease są pomijane.
-Puste repozytorium bez Releases wyświetla „Brak opublikowanych wydań”.
+Compile the download engine checks in `tests/` together with `src/DownloadEngine.cs` using the .NET Framework `csc.exe` compiler. The progress model checks use `src/ProgressModel.cs`. Place engine test executables in the application folder so they can locate `tools/`.
 
-## Autor i narzędzia
+Update checks use `src/AppUpdates.cs`, `src/Localization.cs`, the embedded translation catalog, and the WPF, System.Xaml, and System.Web.Extensions references.
 
-[cavxvac](https://github.com/cavxvac) · [gerardbinder.com](https://gerardbinder.com)
+Tests use local media fixtures and the `test-artifacts/` directory. Generated `.build/`, `.downloads/`, and `test-artifacts/` folders, along with temporary test executables, can be removed after testing.
 
-Vidnelo jest interfejsem graficznym dla [yt-dlp](https://github.com/yt-dlp/yt-dlp).
-Narzędzia działają lokalnie. Informacje o dołączonych plikach znajdują się w `tools/`.
+User settings are stored separately in `%LOCALAPPDATA%/LinkDownloader`.
+
+## Updates
+
+Releases are published on [GitHub Releases](https://github.com/cavxvac/Vidnelo/releases).
+
+Vidnelo checks for the latest stable release in the background at startup. When a newer version is available, it highlights the update button without interrupting downloads. The Updates window displays release notes and lets users open the release page, postpone the update, or skip that version. Manual checks also show skipped versions.
+
+Connection failures at startup are silent. Manual checks display a message if the update check fails.
+
+Application updates currently require manual installation: download the new version, close Vidnelo, and replace the application executable. User settings remain in `%LOCALAPPDATA%/LinkDownloader`. A separate **Update yt-dlp** button updates the download engine.
+
+### Publishing a release
+
+Use version tags such as `v1.0`, `v1.1`, or `v1.2.1`. The version in `src/AssemblyInfo.cs` must match the release tag. Attach the compiled application or distribution package to the release; GitHub's automatically generated source archives are not ready-to-run packages.
+
+Drafts and prereleases are excluded from update checks. Until the first release is published, the app displays **No published releases yet.**
+
+## Credits
+
+Created by [cavxvac](https://github.com/cavxvac) · [gerardbinder.com](https://gerardbinder.com)
+
+Vidnelo is an independent graphical client for [yt-dlp](https://github.com/yt-dlp/yt-dlp). Downloads are handled locally by yt-dlp and its supporting tools. See `tools/` for information about bundled dependencies and their licenses.
