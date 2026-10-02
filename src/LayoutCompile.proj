@@ -1,0 +1,22 @@
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <UsingTask TaskName="Microsoft.Build.Tasks.Windows.MarkupCompilePass1" AssemblyFile="$(MSBuildBinPath)\WPF\PresentationBuildTasks.dll"/>
+  <UsingTask TaskName="Microsoft.Build.Tasks.Windows.ResourcesGenerator" AssemblyFile="$(MSBuildBinPath)\WPF\PresentationBuildTasks.dll"/>
+  <ItemGroup>
+    <Page Include="MainWindow.xaml"/>
+    <Page Include="SupportedSites.xaml"/>
+    <Page Include="About.xaml"/>
+    <ReferencePath Include="$(MSBuildBinPath)\mscorlib.dll"/>
+    <ReferencePath Include="$(MSBuildBinPath)\System.dll"/>
+    <ReferencePath Include="$(MSBuildBinPath)\System.Xaml.dll"/>
+    <ReferencePath Include="$(MSBuildBinPath)\WPF\WindowsBase.dll"/>
+    <ReferencePath Include="$(MSBuildBinPath)\WPF\PresentationCore.dll"/>
+    <ReferencePath Include="$(MSBuildBinPath)\WPF\PresentationFramework.dll"/>
+  </ItemGroup>
+  <Target Name="Build">
+    <MakeDir Directories="obj"/>
+    <MarkupCompilePass1 Language="C#" LanguageSourceExtension=".cs" PageMarkup="@(Page)" AssemblyName="$(UiAssembly)" OutputType="WinExe" References="@(ReferencePath)" RootNamespace="LinkDownloader" OutputPath="obj\">
+      <Output ItemName="GeneratedBaml" TaskParameter="GeneratedBamlFiles"/>
+    </MarkupCompilePass1>
+    <ResourcesGenerator ResourceFiles="@(GeneratedBaml)" OutputPath="obj\" OutputResourcesFile="Layout.g.resources"/>
+  </Target>
+</Project>

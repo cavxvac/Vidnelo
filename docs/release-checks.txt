@@ -1,0 +1,32 @@
+PASS PasteButton 82x46
+PASS BrowseButton 276x40
+PASS OpenButton 276x40
+PASS DownloadButton 458x52
+PASS CancelButton 94x52
+PASS UpdateButton 102x40
+PASS ThemeButton 40x41
+PASS LanguageButton 40x41
+PASS AboutButton 40x41
+PASS default window fits without scrolling
+PASS quality menu opens, remembers each format and locks during download
+PASS all format choices, per-media selection, lossless quality state and download lock
+PASS smooth theme interpolation and rapid reversal; no persistent mouse-focus ring
+PASS animated clipped progress and download state
+PASS separate audio stream and processing have honest progress
+PASS PasteButton 82x46
+PASS BrowseButton 293x40
+PASS OpenButton 294x40
+PASS DownloadButton 493x52
+PASS CancelButton 94x52
+PASS UpdateButton 102x40
+PASS ThemeButton 40x40
+PASS LanguageButton 40x40
+PASS AboutButton 40x40
+PASS invalid URL produces inline error
+PASS MP4 and MP3 tiles are mutually exclusive
+PASS details panel expands
+PASS idle stops polling and infinite animation
+PASS updates dialog renders a simulated release in both themes without network access
+PASS about dialog opens and closes in both themes; language picker enabled
+PASS supported sites load from yt-dlp, cached reopen, search, empty state, popular shortcut and both themes
+PASS: clean first-time setup, executable hash, tool execution, repeated startup without downloads, packaged UI checks

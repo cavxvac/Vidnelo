@@ -1,0 +1,18 @@
+Tool: Built-in image_gen.imagegen (transparent_background: true)
+Generated artwork: assets/app-icon.png
+Project PNG: assets/app-icon.png
+Project ICO: assets/app-icon.ico
+ICO sizes: 16, 24, 32, 48, 64, 128, 256 pixels. Format conversion only; source art preserved.
+
+Use case: stylized-concept
+Asset type: original Windows desktop application icon for Link Downloader, production-ready square raster with actual transparent background.
+Primary request: A polished Windows 11 Fluent Design-inspired download app icon: one bold sculptural downward arrow formed from layered softly folded blue and cyan material, descending into a compact rounded download tray.
+Scene/backdrop: genuinely transparent alpha background, no floor, no backdrop, no checkerboard pixels.
+Subject: a single cohesive download-arrow-and-tray symbol, friendly and instantly recognizable at a tiny 32-pixel app icon size.
+Style/medium: premium minimal 3D app icon, softly rounded geometry, subtle dimensional layers and gentle gradients, clear silhouette with very little detail. Original design; no existing brand mark.
+Composition/framing: square canvas, centered front three-quarter view with restrained depth, whole icon fully visible, occupies approximately 80 percent of canvas, around 10 percent clean transparent padding on all sides.
+Lighting/mood: soft studio light from top-left with tasteful highlights and only tight self-shadowing.
+Color palette: rich azure blue, electric cyan, a restrained deep indigo accent for depth.
+Materials/textures: smooth satin translucent layers with opaque readable core, polished but not glossy plastic, crisp antialiased edges.
+Constraints: one icon only; arrow must clearly point downward and tray must read as a destination; preserve an uncluttered silhouette; actual alpha transparency.
+Avoid: text, numbers, lettering, logos, Microsoft logo, badges, sparkles, circles, decorative particles, extra objects, watermarks, background gradients, cast shadow outside the object, tiny details.

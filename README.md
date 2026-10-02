@@ -1,12 +1,43 @@
-# Vidnelo 1.0
+<p align="center">
+  <img src="assets/app-icon-ui.png" width="100" alt="Vidnelo logo">
+</p>
+<h1 align="center">Vidnelo</h1>
+<p align="center">Video and audio downloads. A simple Windows interface, powered by yt-dlp.</p>
+<p align="center">
+  <a href="https://github.com/cavxvac/Vidnelo/releases/latest"><strong>Download for Windows</strong></a>
+  · <a href="#getting-started">Getting started</a>
+  · <a href="LICENSE">MIT License</a>
+</p>
 
-A Windows desktop app for downloading video and audio, powered by [yt-dlp](https://github.com/yt-dlp/yt-dlp).
+![Vidnelo in light mode](docs/images/vidnelo-light.png)
+
+## Features
+
+- Download a single video or extract its audio.
+- Video formats: MP4, MKV, and WebM. Audio formats: MP3, M4A, Opus, WAV, and FLAC.
+- Choose the best available quality or a resolution limit; select an MP3 bitrate.
+- Light and dark themes, animated progress, and download details.
+- 15 interface languages, including English, Polish, and Ukrainian.
+- Searchable supported-site list provided by yt-dlp.
+- Optional app update checks and a separate yt-dlp updater.
+
+<details>
+<summary>See dark mode</summary>
+
+![Vidnelo in dark mode](docs/images/vidnelo-dark.png)
+
+</details>
 
 ## Getting started
 
-Run **Vidnelo.exe**, paste a link, choose a format and quality, select a destination folder, and start downloading. Keep the `tools/` folder alongside the executable.
+1. Download `Vidnelo-1.0-Windows-x64.zip` from [Releases](https://github.com/cavxvac/Vidnelo/releases/latest).
+2. Extract the entire ZIP to a writable folder.
+3. Run **Start Vidnelo.cmd**. First-time setup downloads yt-dlp, FFmpeg, FFprobe, and Deno from their official GitHub repositories.
+4. When Vidnelo opens, paste a link, choose a format and quality, select a destination folder, and start downloading.
 
-The interface supports 15 languages, including English and Polish. Additional instructions in Polish are available in `INSTRUKCJA.txt`.
+**Requirements:** Windows 10/11 x64, .NET Framework 4.8, and an internet connection. Allow approximately 1 GB for tools and setup archives, plus storage for your downloads.
+
+After setup, you can run **Vidnelo.exe** directly. Keep the `tools/` folder alongside it. The globe button changes the interface language. Additional instructions in Polish are available in `INSTRUKCJA.txt`.
 
 ## Project layout
 
@@ -20,7 +51,13 @@ The interface supports 15 languages, including English and Polish. Additional in
 
 ## Building
 
-Run `./build.ps1` in PowerShell. Building requires Windows and the .NET Framework compiler.
+From the source folder, run these commands in PowerShell. Building requires Windows and the .NET Framework compiler.
+
+```powershell
+./build.ps1
+./scripts/setup-tools.ps1
+./Vidnelo.exe
+```
 
 The resulting executable is placed alongside `tools/`. Close Vidnelo before replacing its executable, or build a separate copy with:
 
@@ -65,4 +102,8 @@ Drafts and prereleases are excluded from update checks. Until the first release 
 
 Created by [cavxvac](https://github.com/cavxvac) · [gerardbinder.com](https://gerardbinder.com)
 
-Vidnelo is an independent graphical client for [yt-dlp](https://github.com/yt-dlp/yt-dlp). Downloads are handled locally by yt-dlp and its supporting tools. See `tools/` for information about bundled dependencies and their licenses.
+Vidnelo is an independent graphical client for [yt-dlp](https://github.com/yt-dlp/yt-dlp). Downloads are handled locally by yt-dlp and its supporting tools. Dependencies are downloaded during setup and are not included in the source repository or the small release ZIP. See [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md) for project links and license information.
+
+## License
+
+Vidnelo is licensed under the [MIT License](LICENSE). Third-party tools retain their own licenses.

@@ -1,0 +1,63 @@
+VIDNELO
+
+1. Przy pierwszym uruchomieniu rozpakuj cały ZIP i uruchom Start Vidnelo.cmd. Skrypt pobierze narzędzia. Potem możesz uruchamiać Vidnelo.exe.
+2. Wklej link do filmu — przyciskiem Wklej lub Ctrl+V.
+3. Wybierz Film lub Dźwięk, format pliku i jakość.
+4. Kliknij Pobierz.
+
+Domyślnie program zapisuje film MP4 w folderze Wideo\Pobrane z linku.
+Możesz zmienić folder przyciskiem Zmień folder i wybrać sam dźwięk.
+Przycisk Otwórz pokazuje folder z plikami. Program pamięta wybrany folder.
+Przycisk Aktualizuj otwiera osobne opcje aktualizacji Vidnelo i yt-dlp. Aktualizacja Vidnelo otwiera stronę wydania; nowy plik EXE należy podmienić po zamknięciu aplikacji.
+Przycisk z księżycem przełącza jasny i ciemny motyw. Program pamięta motyw.
+Film: MP4, MKV lub WebM. Dźwięk: MP3, M4A, Opus, WAV lub FLAC.
+Format wybiera się pod kafelkami. Program pamięta go osobno dla filmu i dźwięku.
+Jakość filmu: najlepsza dostępna lub limit 2160p, 1440p, 1080p, 720p, 480p.
+Jeśli serwis podaje rozdzielczość, wybierany jest najlepszy wariant do limitu.
+MP3: najlepsza dostępna jakość albo 320, 256, 192, 128 kb/s.
+M4A i Opus używają jakości automatycznej. WAV i FLAC nie dodają strat kompresji,
+ale nie poprawiają jakości źródła. WebM może wymagać dłuższej konwersji.
+Różne formaty i ustawienia jakości mają oddzielne nazwy z końcówką „vidnelo”.
+Szczegóły pobierania są zwijane; po błędzie otwierają się automatycznie.
+Animacje obejmują subtelne wejście kart, reakcje przycisków, płynny pasek postępu,
+przesuwający się połysk, przygotowanie pliku i potwierdzenie zakończenia.
+Panel statusu pokazuje bieżący plik, prędkość, pozostały czas i etap pracy.
+Procent dotyczy aktualnego strumienia (obraz i dźwięk mogą być pobierane osobno).
+Sukces jest pokazywany dopiero po zapisaniu końcowego pliku.
+W szerokim oknie ustawienia i status są obok siebie. W wąskim oknie są jeden pod drugim.
+Program respektuje systemowe wyłączenie animacji interfejsu.
+Anuluj przerywa pobieranie; pliki częściowe mogą posłużyć do wznowienia.
+Pobierany jest pojedynczy film, bez całej playlisty. Istniejące pliki nie są nadpisywane.
+
+Zachowaj folder tools obok programu. Nie jest potrzebny Python ani wpisywanie poleceń.
+Niektóre serwisy wymagają logowania lub blokują pobieranie. Szczegóły błędów
+są widoczne w dolnej części okna. Program nie obsługuje logowania ani DRM.
+
+Źródła narzędzi:
+https://github.com/yt-dlp/yt-dlp
+https://github.com/yt-dlp/FFmpeg-Builds
+https://github.com/denoland/deno
+Wersje pobranych plików i sumy SHA256: tools\sources.txt.
+Licencja kompilacji FFmpeg: tools\LICENSE.txt.
+
+Kod źródłowy: src\ (interfejs WPF, silnik i tłumaczenia).
+Ponowna kompilacja: build.ps1. Interfejs jest kompilowany do BAML podczas budowania,
+dzięki czemu przy uruchomieniu nie trzeba analizować tekstu XAML.
+Wymagane są narzędzia .NET Framework w Windows. Plik wynikowy: Vidnelo.exe.
+Ikona programu: assets\app-icon.ico; grafika źródłowa: assets\app-icon.png.
+Grafikę wygenerowano wbudowanym Imagegen. Prompt: assets\ICON-PROMPT.txt.
+Narzędzia można ponownie pobrać skryptem scripts\setup-tools.ps1.
+
+Dotychczasowy folder zapisu i motyw są zachowane po zmianie nazwy.
+Testy: tests\. Raport sprawdzenia interfejsu: docs\ui-checks.txt.
+
+JĘZYKI INTERFEJSU
+Ikona globusa obok zmiany motywu otwiera wybór języka. Zmiana działa od razu
+i jest zapamiętywana po zamknięciu programu. Dostępnych jest 15 języków:
+polski, angielski, hiszpański, francuski, niemiecki, portugalski (Brazylia),
+włoski, ukraiński, chiński uproszczony, japoński, koreański, hindi, arabski,
+turecki i indonezyjski. Rosyjski nie jest dostępny.
+Arabski używa układu od prawej do lewej. Linki, ścieżki, nazwy plików
+i techniczne komunikaty z yt-dlp/FFmpeg pozostają w oryginalnym zapisie.
+Tłumaczenia są wbudowane w program i nie wymagają Internetu.
+Katalog: src\Translations.txt; obsługa języków: src\Localization.cs.
