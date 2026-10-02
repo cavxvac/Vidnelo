@@ -2,9 +2,9 @@
   <img src="assets/vidnelo-logo-original.png" width="240" alt="Vidnelo">
 </p><p align="center">Video and audio downloads. A simple Windows interface, powered by yt-dlp.</p>
 <p align="center">
-  <a href="https://github.com/cavxvac/Vidnelo/releases/latest"><strong>Download for Windows</strong></a>
-  · <a href="#getting-started">Getting started</a>
-  · <a href="LICENSE">MIT License</a>
+  <a href="https://github.com/cavxvac/Vidnelo/releases/latest"><img src="assets/buttons/download.svg?v=2" height="52" alt="Download for Windows"></a>&nbsp;
+  <a href="#getting-started"><img src="assets/buttons/getting-started.svg?v=2" height="52" alt="Getting started"></a>&nbsp;
+  <a href="LICENSE"><img src="assets/buttons/license.svg?v=2" height="52" alt="MIT License"></a>
 </p>
 
 <p align="center">
