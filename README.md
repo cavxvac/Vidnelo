@@ -11,10 +11,6 @@
   <img src="https://github.com/user-attachments/assets/bc8714e0-328b-4096-b2ad-60563e13a828" width="100%" alt="Vidnelo animation">
 </p>
 
-<p align="center">
-  <img src="docs/images/vidnelo-light.png" width="100%" alt="Vidnelo app">
-</p>
-
 ## Features
 
 - Download a single video or extract its audio.
@@ -25,14 +21,14 @@
 - Searchable supported-site list provided by yt-dlp.
 - Optional app update checks and a separate yt-dlp updater.
 
-<details>
-<summary>See dark mode</summary>
+<br>
 
-![Vidnelo in dark mode](docs/images/vidnelo-dark.png)
-
-</details>
+<p align="center">
+  <img src="vidnelo-download-polished.png" width="100%" alt="Vidnelo downloading a video">
+</p>
 
 ## Getting started
+
 
 1. Download `Vidnelo-1.0-Windows-x64.zip` from [Releases](https://github.com/cavxvac/Vidnelo/releases/latest).
 2. Extract the entire ZIP to a writable folder.
