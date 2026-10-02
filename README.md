@@ -1,15 +1,19 @@
 <p align="center">
-  <img src="assets/app-icon-ui.png" width="100" alt="Vidnelo logo">
-</p>
-<h1 align="center">Vidnelo</h1>
-<p align="center">Video and audio downloads. A simple Windows interface, powered by yt-dlp.</p>
+  <img src="assets/vidnelo-logo-original.png" width="240" alt="Vidnelo">
+</p><p align="center">Video and audio downloads. A simple Windows interface, powered by yt-dlp.</p>
 <p align="center">
   <a href="https://github.com/cavxvac/Vidnelo/releases/latest"><strong>Download for Windows</strong></a>
   · <a href="#getting-started">Getting started</a>
   · <a href="LICENSE">MIT License</a>
 </p>
 
-![Vidnelo in light mode](docs/images/vidnelo-light.png)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/bc8714e0-328b-4096-b2ad-60563e13a828" width="100%" alt="Vidnelo animation">
+</p>
+
+<p align="center">
+  <img src="docs/images/vidnelo-light.png" width="100%" alt="Vidnelo app">
+</p>
 
 ## Features
 
