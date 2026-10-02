@@ -1,0 +1,5 @@
+<p align="center">
+  <a href="https://github.com/cavxvac/Vidnelo/releases/latest"><img src="assets/buttons/download.svg" height="52" alt="Download for Windows"></a>&nbsp;
+  <a href="#getting-started"><img src="assets/buttons/getting-started.svg" height="52" alt="Getting started"></a>&nbsp;
+  <a href="LICENSE"><img src="assets/buttons/license.svg" height="52" alt="MIT License"></a>
+</p>
